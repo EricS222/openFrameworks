@@ -23,6 +23,32 @@ vFlip(false)
 {
 }
 
+ofCamera::ofCamera(const ofCamera& obj)
+{
+	this->isOrtho = obj.isOrtho;
+	this->fov = obj.fov;
+	this->nearClip = obj.nearClip;
+	this->farClip = obj.farClip;
+	this->lensOffset = obj.lensOffset;
+	this->forceAspectRatio =obj.forceAspectRatio;
+	this->aspectRatio = obj.aspectRatio;
+	this->vFlip = obj.vFlip;
+}
+
+ofCamera & ofCamera::operator=(const ofCamera& obj)
+{
+	if (this == &obj) return *this;
+	this->isOrtho = obj.isOrtho;
+	this->fov = obj.fov;
+	this->nearClip = obj.nearClip;
+	this->farClip = obj.farClip;
+	this->lensOffset = obj.lensOffset;
+	this->forceAspectRatio = obj.forceAspectRatio;
+	this->aspectRatio = obj.aspectRatio;
+	this->vFlip = obj.vFlip;
+	return *this;
+}
+
 //----------------------------------------
 ofCamera::~ofCamera() {}
 
