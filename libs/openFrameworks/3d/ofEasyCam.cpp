@@ -26,6 +26,37 @@ ofEasyCam::ofEasyCam(){
 	addInteraction(TRANSFORM_TRANSLATE_XY, OF_MOUSE_BUTTON_MIDDLE);
 	
 }
+
+ofEasyCam::ofEasyCam(const ofEasyCam& oldobj)
+{
+	this->sensitivityTranslate = oldobj.sensitivityTranslate;
+	this->sensitivityRot = oldobj.sensitivityRot;
+
+	for (int i = 0; i < oldobj.interactions.size(); i++)
+	{
+		this->interactions.push_back(oldobj.interactions[i]);
+	}
+
+
+}
+
+ofEasyCam& ofEasyCam::operator=(const ofEasyCam& obj)
+{
+	if (this == &obj) return *this;
+	this->sensitivityTranslate = oldobj.sensitivityTranslate;
+	this->sensitivityRot = oldobj.sensitivityRot;
+	for (int i = 0; i < oldobj.interactions.size(); i++)
+	{
+		this->interactions.push_back(oldobj.interactions[i]);
+	}
+	return *this;
+}
+
+ofEasyCam::~ofEasyCam() 
+{
+	this->events = nullptr;
+}
+
 //----------------------------------------
 void ofEasyCam::update(ofEventArgs & args){
 	if(this->viewport.isZero()){
