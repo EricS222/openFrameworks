@@ -19,6 +19,8 @@ public:
     
     /// \brief Construct a default camera.
 	ofCamera();
+	ofCamera(const ofCamera& obj);
+	ofCamera& operator=(const ofCamera& obj);
 
     /// \brief Destroy the camera.
     virtual ~ofCamera();
