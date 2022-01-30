@@ -27,14 +27,14 @@ ofEasyCam::ofEasyCam(){
 	
 }
 
-ofEasyCam::ofEasyCam(const ofEasyCam& oldobj)
+ofEasyCam::ofEasyCam(const ofEasyCam& obj)
 {
-	this->sensitivityTranslate = oldobj.sensitivityTranslate;
-	this->sensitivityRot = oldobj.sensitivityRot;
+	this->sensitivityTranslate = obj.sensitivityTranslate;
+	this->sensitivityRot = obj.sensitivityRot;
 
-	for (int i = 0; i < oldobj.interactions.size(); i++)
+	for (int i = 0; i < obj.interactions.size(); i++)
 	{
-		this->interactions.push_back(oldobj.interactions[i]);
+		this->interactions.push_back(obj.interactions[i]);
 	}
 
 
@@ -43,11 +43,11 @@ ofEasyCam::ofEasyCam(const ofEasyCam& oldobj)
 ofEasyCam& ofEasyCam::operator=(const ofEasyCam& obj)
 {
 	if (this == &obj) return *this;
-	this->sensitivityTranslate = oldobj.sensitivityTranslate;
-	this->sensitivityRot = oldobj.sensitivityRot;
-	for (int i = 0; i < oldobj.interactions.size(); i++)
+	this->sensitivityTranslate = obj.sensitivityTranslate;
+	this->sensitivityRot = obj.sensitivityRot;
+	for (int i = 0; i < obj.interactions.size(); i++)
 	{
-		this->interactions.push_back(oldobj.interactions[i]);
+		this->interactions.push_back(obj.interactions[i]);
 	}
 	return *this;
 
