@@ -13,7 +13,7 @@ public:
     
     /// \brief Create a default camera.
 	ofEasyCam();
-	ofEasyCam(const ofEasyCam& old_obj);
+	ofEasyCam(const ofEasyCam& obj);
 	ofEasyCam& operator=(const ofEasyCam& obj);
 	virtual ~ofEasyCam();
 
