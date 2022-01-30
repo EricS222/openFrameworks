@@ -13,6 +13,9 @@ public:
     
     /// \brief Create a default camera.
 	ofEasyCam();
+	ofEasyCam(const ofEasyCam& old_obj);
+	ofEasyCam& operator=(const ofEasyCam& obj);
+	virtual ~ofEasyCam();
 
 	/// \}
 	/// \name Rendering
